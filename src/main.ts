@@ -172,38 +172,6 @@ ipcMain.handle("start-proxy-service", async (event) => {
     return array;
   }
 
-  // try {
-    // const activeInterfaces = await ReCall();
-    // console.log('activeInterfaces', activeInterfaces);
-    // for(let i = 0; i < activeInterfaces.length ; i++){
-    //   const iFace = activeInterfaces[i];
-    //   const port = iFace.port;
-    //   const simIP = iFace.address;
-    //   const respone =  await CreateProxyServer( simIP, Number(port));
-    //   console.log('respone',respone);
-    // }
-    // const fullInterfaceDetails = activeInterfaces;
-    // activeInterfaces.forEach( async (iFace: NetworkInterfaceType, i: number) => {
-    //   const port = iFace.port;
-    //   const simIP = iFace.address;
-    //   const respone =  await CreateProxyServer( simIP, Number(port));
-    //   console.log('respone',respone);
-    //   const publicIp = await getPublicIpUsingCurl(iFace.address).then((res: any) => {
-    //           return res;
-    //         })
-    //         .catch((error: any) => console.log("error", error));
-    //   fullInterfaceDetails[i].nat_ip = publicIp;
-    // });
-  //   event.sender.send("response-on-proxy-server-start", {
-  //     success: true,
-  //     message: {
-  //       message: `Proxy-server start command sent`,
-  //       networks: fullInterfaceDetails
-  //     }
-  //   });
-  // } catch (error) {
-  //   console.log('start-proxy-service error:', error);
-  // }
   if (!svc.exists) {
     console.log("Service does not exist. Install it first.");
     return;
@@ -236,11 +204,6 @@ ipcMain.handle("start-proxy-service", async (event) => {
 });
 
 ipcMain.handle("stop-proxy-service",async (event, params: number[]) => {
-  // const arrayPort = params;
-  // arrayPort.forEach((port, i: number) =>{
-  //   stopProxyServer(port);
-  //   console.log(`Proxy Server on port ${port} stopped`);
-  // })
 
   if (!svc.exists) {
     console.log("Service does not exist.");
@@ -254,11 +217,3 @@ ipcMain.handle("stop-proxy-service",async (event, params: number[]) => {
     },
   })
 });
-//
-// ipcMain.handle("start-one-proxy-server", async(event)=>{
-
-// });
-
-// ipcMain.handle("stop-one-proxy-server", async(event)=>{
-
-// });

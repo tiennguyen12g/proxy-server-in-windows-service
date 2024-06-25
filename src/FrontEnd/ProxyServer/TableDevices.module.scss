@@ -1,0 +1,45 @@
+.wrap-table{
+
+}
+.table-devices{
+    margin-top: 20px;
+    border: 1px solid rgb(201, 201, 201);
+    .table-header{
+        display:grid;
+    }
+    .table-header > div {
+        text-align: center;
+        font-weight: 500;
+        font-size: 18px;
+        border-right: 1px solid  rgb(201, 201, 201);
+        padding: 5px 0px;
+
+    }
+    .table-header > div:last-child{
+        border-right: 0cm solid  rgb(201, 201, 201);
+    }
+    .table-body{
+        .table-row{
+            display:grid;
+            &:hover{
+                background-color: rgb(152, 200, 245);
+            }
+        }
+        .table-row > div {
+            text-align: center;
+            // font-weight: 500;
+            font-size: 16px;
+            border-right: 1px solid  rgb(201, 201, 201);
+            border-top: 1px solid  rgb(201, 201, 201);
+            padding: 5px 0px;
+        }
+        .table-row > div:last-child{
+            border-right: 0cm solid  rgb(201, 201, 201);
+        }
+    }
+    
+}
+
+.btn-decor{
+    cursor: pointer;
+}
